@@ -3,140 +3,105 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AppModules</title>
+  <title>Kotlin Learn</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body data-page="home">
 
-  <!-- NAVBAR -->
-  <header class="navbar" id="navbar">
-    <div class="navbar__brand">
-      <span class="navbar__logo">◈</span>
-      <span class="navbar__name">AppModules</span>
-    </div>
-
-    <!-- Hamburger (mobile) -->
-    <button class="navbar__hamburger" id="hamburger" aria-label="Menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
-
-    <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Główna nawigacja">
-      <a href="#modul-1" class="nav-link" data-module="1">
-        <span class="nav-link__num">01</span>
-        <span class="nav-link__label">Dashboard</span>
-      </a>
-      <a href="#modul-2" class="nav-link" data-module="2">
-        <span class="nav-link__num">02</span>
-        <span class="nav-link__label">Dane</span>
-      </a>
-      <a href="#modul-3" class="nav-link" data-module="3">
-        <span class="nav-link__num">03</span>
-        <span class="nav-link__label">Analiza</span>
-      </a>
-      <a href="#modul-4" class="nav-link" data-module="4">
-        <span class="nav-link__num">04</span>
-        <span class="nav-link__label">Raporty</span>
-      </a>
-      <a href="#modul-5" class="nav-link" data-module="5">
-        <span class="nav-link__num">05</span>
-        <span class="nav-link__label">Ustawienia</span>
-      </a>
-    </nav>
-  </header>
+  <!-- NAVBAR wstrzykiwany przez navbar.js -->
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__eyebrow">System modułowy · v1.0</div>
+    <div class="hero__eyebrow">Kotlin E-Learning · v1.0</div>
     <h1 class="hero__title">
-      Struktura<br />
-      <em>Aplikacji</em>
+      Ucz się<br />
+      <em>Kotlina</em>
     </h1>
-    <p class="hero__sub">Szkielet front-endu z nawigacją, responsywnością i globalnymi stylami. Wybierz moduł poniżej.</p>
-    <a href="#modul-1" class="btn btn--primary">Rozpocznij <span>→</span></a>
+    <p class="hero__sub">Interaktywna aplikacja e-learningowa. Teoria, quizy, ćwiczenia i fiszki — wszystko w jednym miejscu.</p>
+    <a href="pages/teoria.html" class="btn btn--primary">Rozpocznij naukę <span>→</span></a>
   </section>
 
   <!-- DIVIDER -->
   <div class="divider"><span>MODUŁY</span></div>
 
-  <!-- MODULES GRID -->
-  <main class="modules" id="modules">
+  <!-- KARTY MODUŁÓW -->
+  <main class="modules">
 
-    <article class="module-card" id="modul-1">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">01</span>
-        <span class="module-card__tag">Aktywny</span>
+        <span class="module-card__tag">Teoria</span>
       </header>
-      <h2 class="module-card__title">Dashboard</h2>
-      <p class="module-card__desc">Przegląd kluczowych wskaźników, ostatnia aktywność i skróty do najważniejszych funkcji systemu.</p>
+      <h2 class="module-card__title">Treść teoretyczna</h2>
+      <p class="module-card__desc">Sekcje z teorią na temat Kotlina — składnia funkcji, parametry, typy zwracane, przykłady kodu.</p>
       <footer class="module-card__footer">
-        <a href="#modul-1" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
+        <a href="pages/teoria.html" class="btn btn--ghost">Otwórz →</a>
+        <span class="module-card__status module-card__status--ok">● Gotowy</span>
       </footer>
     </article>
 
-    <article class="module-card" id="modul-2">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">02</span>
-        <span class="module-card__tag">Beta</span>
+        <span class="module-card__tag">Quiz</span>
       </header>
-      <h2 class="module-card__title">Dane</h2>
-      <p class="module-card__desc">Import, eksport i zarządzanie zbiorami danych. Obsługa formatów CSV, JSON, XML.</p>
+      <h2 class="module-card__title">Quiz ABCD</h2>
+      <p class="module-card__desc">Pytania jednokrotnego wyboru z 4 odpowiedziami i informacją zwrotną.</p>
       <footer class="module-card__footer">
-        <a href="#modul-2" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
+        <a href="pages/quiz.html" class="btn btn--ghost">Otwórz →</a>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
-    <article class="module-card" id="modul-3">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">03</span>
-        <span class="module-card__tag">Nowy</span>
+        <span class="module-card__tag">Drag & Drop</span>
       </header>
-      <h2 class="module-card__title">Analiza</h2>
-      <p class="module-card__desc">Narzędzia analityczne: wykresy, filtrowanie, agregacje i eksport wyników do raportów.</p>
+      <h2 class="module-card__title">Bloczki</h2>
+      <p class="module-card__desc">Przeciąganie fragmentów kodu we właściwej kolejności.</p>
       <footer class="module-card__footer">
-        <a href="#modul-3" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--warn">● Ładowanie</span>
+        <a href="pages/bloczki.html" class="btn btn--ghost">Otwórz →</a>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
-    <article class="module-card" id="modul-4">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">04</span>
-        <span class="module-card__tag">Stabilny</span>
+        <span class="module-card__tag">Kod</span>
       </header>
-      <h2 class="module-card__title">Raporty</h2>
-      <p class="module-card__desc">Generowanie i harmonogramowanie raportów PDF/Excel. Historia i archiwum dokumentów.</p>
+      <h2 class="module-card__title">Uzupełnianie kodu</h2>
+      <p class="module-card__desc">Wpisywanie brakujących słów kluczowych w puste pola w kodzie.</p>
       <footer class="module-card__footer">
-        <a href="#modul-4" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
+        <a href="pages/kod.html" class="btn btn--ghost">Otwórz →</a>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
-    <article class="module-card" id="modul-5">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">05</span>
-        <span class="module-card__tag">Admin</span>
+        <span class="module-card__tag">Fiszki</span>
       </header>
-      <h2 class="module-card__title">Ustawienia</h2>
-      <p class="module-card__desc">Konfiguracja konta, uprawnień, motywu interfejsu i parametrów systemowych.</p>
+      <h2 class="module-card__title">Flashcards</h2>
+      <p class="module-card__desc">Interaktywne karty z pytaniem i ukrytą odpowiedzią.</p>
       <footer class="module-card__footer">
-        <a href="#modul-5" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--off">● Offline</span>
+        <a href="pages/fiszki.html" class="btn btn--ghost">Otwórz →</a>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
   </main>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    <span>AppModules © 2025</span>
+    <span>Kotlin Learn © 2025</span>
     <span>Zbudowano mobilnie-first · CSS + HTML + JS</span>
   </footer>
 
-  <script src="app.js"></script>
+  <script src="js/navbar.js"></script>
 </body>
 </html>
