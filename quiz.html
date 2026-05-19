@@ -7,26 +7,82 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Globalny styl projektu -->
   <link rel="stylesheet" href="../style.css" />
+  <!-- Styl specyficzny dla quizu -->
+  <link rel="stylesheet" href="quiz.css" />
 </head>
 <body data-page="quiz">
 
-  <main>
+  <main class="quiz-page">
     <section class="theory">
       <div class="theory__container">
 
+        <!-- NAGŁÓWEK -->
         <div class="theory__header">
           <span class="theory__eyebrow">Moduł 02 · Quiz</span>
           <h1 class="theory__title">Quiz ABCD</h1>
-          <p class="theory__lead">Pytania jednokrotnego wyboru z 4 odpowiedziami i natychmiastową informacją zwrotną.</p>
+          <p class="theory__lead">Funkcje w Kotlinie — 5 pytań, jedna szansa na odpowiedź. Ile zdobędziesz punktów?</p>
         </div>
 
-        <div class="theory__block" style="align-items:center;text-align:center;padding:4rem 2rem;">
-          <span style="font-size:3rem;">🚧</span>
-          <h2 class="theory__block-title" style="justify-content:center;">W budowie</h2>
-          <p class="theory__text">Ten moduł jest w trakcie implementacji. Wróć wkrótce!</p>
+        <!-- PASEK POSTĘPU -->
+        <div class="quiz-progress" id="quizProgress" aria-hidden="true">
+          <div class="quiz-progress__bar">
+            <div class="quiz-progress__fill" id="progressFill" style="width: 0%"></div>
+          </div>
+          <span class="quiz-progress__label" id="progressLabel">Pytanie 1 z 5</span>
         </div>
 
+        <!-- LICZNIK PUNKTÓW (live) -->
+        <div class="quiz-score-live" id="scoreLive" aria-live="polite">
+          <span class="quiz-score-live__icon">◈</span>
+          <span>Punkty: <strong id="scoreValue">0</strong> / <strong id="scoreTotal">5</strong></span>
+        </div>
+
+        <!-- KONTENER PYTAŃ -->
+        <div class="quiz-card" id="quizCard">
+
+          <!-- Pojedyncze pytanie (generowane przez JS) -->
+          <div class="quiz-question" id="quizQuestion">
+            <!-- Numer pytania -->
+            <div class="quiz-question__meta">
+              <span class="quiz-question__num" id="questionNum">01</span>
+              <span class="quiz-question__badge" id="questionBadge">Łatwe</span>
+            </div>
+            <!-- Treść pytania -->
+            <p class="quiz-question__text" id="questionText"></p>
+            <!-- Opcje A–D -->
+            <ul class="quiz-options" id="quizOptions" role="list"></ul>
+            <!-- Feedback -->
+            <div class="quiz-feedback" id="quizFeedback" aria-live="polite"></div>
+            <!-- Przycisk Następne -->
+            <div class="quiz-actions">
+              <button class="btn btn--primary quiz-next-btn" id="nextBtn" disabled>
+                Następne <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- WYNIK KOŃCOWY (ukryty na start) -->
+        <div class="quiz-result" id="quizResult" hidden>
+          <div class="quiz-result__icon" id="resultIcon">🏆</div>
+          <h2 class="quiz-result__title" id="resultTitle">Wynik końcowy</h2>
+          <div class="quiz-result__score">
+            <span class="quiz-result__pts" id="resultPts">0</span>
+            <span class="quiz-result__max">/ 5 punktów</span>
+          </div>
+          <p class="quiz-result__msg" id="resultMsg"></p>
+          <div class="quiz-result__actions">
+            <button class="btn btn--primary" id="retryBtn">
+              Spróbuj ponownie ↺
+            </button>
+            <a href="teoria.html" class="btn btn--ghost">← Wróć do teorii</a>
+          </div>
+        </div>
+
+        <!-- NAWIGACJA STRONY -->
         <div class="theory__nav">
           <a href="teoria.html" class="btn btn--ghost">← Teoria</a>
           <a href="bloczki.html" class="btn btn--primary">Bloczki →</a>
@@ -41,6 +97,8 @@
     <span>Moduł 02 · Quiz ABCD</span>
   </footer>
 
-  <script src="../js/navbar.js"></script>
+  <script src="../js/navbar.js" defer></script>
+  <!-- Logika quizu -->
+  <script src="quiz.js"></script>
 </body>
 </html>
