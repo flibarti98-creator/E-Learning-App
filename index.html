@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AppModules</title>
+  <title>Kotlin Learn</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
@@ -15,7 +15,7 @@
   <header class="navbar" id="navbar">
     <div class="navbar__brand">
       <span class="navbar__logo">◈</span>
-      <span class="navbar__name">AppModules</span>
+      <span class="navbar__name">Kotlin Learn</span>
     </div>
 
     <!-- Hamburger (mobile) -->
@@ -26,114 +26,265 @@
     <nav class="navbar__nav" id="navMenu" role="navigation" aria-label="Główna nawigacja">
       <a href="#modul-1" class="nav-link" data-module="1">
         <span class="nav-link__num">01</span>
-        <span class="nav-link__label">Dashboard</span>
+        <span class="nav-link__label">Teoria</span>
       </a>
       <a href="#modul-2" class="nav-link" data-module="2">
         <span class="nav-link__num">02</span>
-        <span class="nav-link__label">Dane</span>
+        <span class="nav-link__label">Quiz</span>
       </a>
       <a href="#modul-3" class="nav-link" data-module="3">
         <span class="nav-link__num">03</span>
-        <span class="nav-link__label">Analiza</span>
+        <span class="nav-link__label">Bloczki</span>
       </a>
       <a href="#modul-4" class="nav-link" data-module="4">
         <span class="nav-link__num">04</span>
-        <span class="nav-link__label">Raporty</span>
+        <span class="nav-link__label">Kod</span>
       </a>
       <a href="#modul-5" class="nav-link" data-module="5">
         <span class="nav-link__num">05</span>
-        <span class="nav-link__label">Ustawienia</span>
+        <span class="nav-link__label">Fiszki</span>
       </a>
     </nav>
   </header>
 
   <!-- HERO -->
   <section class="hero">
-    <div class="hero__eyebrow">System modułowy · v1.0</div>
+    <div class="hero__eyebrow">Kotlin E-Learning · v1.0</div>
     <h1 class="hero__title">
-      Struktura<br />
-      <em>Aplikacji</em>
+      Ucz się<br />
+      <em>Kotlina</em>
     </h1>
-    <p class="hero__sub">Szkielet front-endu z nawigacją, responsywnością i globalnymi stylami. Wybierz moduł poniżej.</p>
-    <a href="#modul-1" class="btn btn--primary">Rozpocznij <span>→</span></a>
+    <p class="hero__sub">Interaktywna aplikacja e-learningowa. Teoria, quizy, ćwiczenia i fiszki — wszystko w jednym miejscu.</p>
+    <a href="#modul-1" class="btn btn--primary">Rozpocznij naukę <span>→</span></a>
   </section>
 
   <!-- DIVIDER -->
   <div class="divider"><span>MODUŁY</span></div>
 
-  <!-- MODULES GRID -->
-  <main class="modules" id="modules">
+  <!-- ═══════════════════════════════════════
+       MODUŁ 1 — TREŚĆ TEORETYCZNA
+  ════════════════════════════════════════ -->
+  <main id="modules">
 
-    <article class="module-card" id="modul-1">
-      <header class="module-card__header">
-        <span class="module-card__num">01</span>
-        <span class="module-card__tag">Aktywny</span>
-      </header>
-      <h2 class="module-card__title">Dashboard</h2>
-      <p class="module-card__desc">Przegląd kluczowych wskaźników, ostatnia aktywność i skróty do najważniejszych funkcji systemu.</p>
-      <footer class="module-card__footer">
-        <a href="#modul-1" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
-      </footer>
-    </article>
+  <section class="theory" id="modul-1">
+    <div class="theory__container">
 
-    <article class="module-card" id="modul-2">
+      <!-- Nagłówek sekcji -->
+      <div class="theory__header">
+        <span class="theory__eyebrow">Moduł 01 · Teoria</span>
+        <h2 class="theory__title">Definiowanie funkcji w Kotlinie</h2>
+        <p class="theory__lead">Funkcja to nazwany blok kodu, który wykonuje określone zadanie. W Kotlinie definiujemy je słowem kluczowym <code>fun</code>.</p>
+      </div>
+
+      <!-- ── Blok 1: Składnia ── -->
+      <div class="theory__block">
+        <h3 class="theory__block-title"><span class="theory__num">01</span> Podstawowa składnia</h3>
+        <p class="theory__text">Każda funkcja składa się z kilku elementów. Przyjrzyj się anatomii poniżej:</p>
+
+        <div class="anatomy">
+          <pre class="anatomy__code"><code><span class="k">fun</span> <span class="fn">nazwaFunkcji</span>(<span class="param">parametr</span>: <span class="type">Typ</span>): <span class="type">TypZwracany</span> {
+    <span class="k">return</span> <span class="val">wartość</span>
+}</code></pre>
+          <div class="anatomy__labels">
+            <div class="anatomy__label anatomy__label--kw">
+              <span class="anatomy__pill anatomy__pill--kw">fun</span>
+              <span>słowo kluczowe — oznacza, że to funkcja</span>
+            </div>
+            <div class="anatomy__label anatomy__label--fn">
+              <span class="anatomy__pill anatomy__pill--fn">nazwaFunkcji</span>
+              <span>identyfikator — dowolna nazwa (camelCase)</span>
+            </div>
+            <div class="anatomy__label anatomy__label--param">
+              <span class="anatomy__pill anatomy__pill--param">parametr: Typ</span>
+              <span>wejście funkcji — może być ich wiele lub zero</span>
+            </div>
+            <div class="anatomy__label anatomy__label--ret">
+              <span class="anatomy__pill anatomy__pill--ret">: TypZwracany</span>
+              <span>typ wartości którą funkcja oddaje do kodu</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Blok 2: Parametry ── -->
+      <div class="theory__block">
+        <h3 class="theory__block-title"><span class="theory__num">02</span> Parametry funkcji</h3>
+        <p class="theory__text">Parametry to „wejścia" funkcji. Kotlin wymaga jawnego podania typu każdego parametru. Możesz też zdefiniować <strong>wartości domyślne</strong>.</p>
+
+        <div class="code-examples">
+          <div class="code-example">
+            <div class="code-example__label">bez parametrów</div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">przywitaj</span>() {
+    println(<span class="str">"Cześć!"</span>)
+}</code></pre>
+          </div>
+
+          <div class="code-example">
+            <div class="code-example__label">z parametrami</div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">przywitaj</span>(<span class="param">imię</span>: <span class="type">String</span>) {
+    println(<span class="str">"Cześć, $imię!"</span>)
+}</code></pre>
+          </div>
+
+          <div class="code-example">
+            <div class="code-example__label">wartość domyślna</div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">przywitaj</span>(<span class="param">imię</span>: <span class="type">String</span> = <span class="str">"świecie"</span>) {
+    println(<span class="str">"Cześć, $imię!"</span>)
+}</code></pre>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Blok 3: Typy zwracane ── -->
+      <div class="theory__block">
+        <h3 class="theory__block-title"><span class="theory__num">03</span> Wartości zwracane i <code>Unit</code></h3>
+
+        <div class="return-grid">
+          <div class="return-card">
+            <div class="return-card__type"><span class="type">Int</span></div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">suma</span>(<span class="param">a</span>: <span class="type">Int</span>, <span class="param">b</span>: <span class="type">Int</span>): <span class="type">Int</span> {
+    <span class="k">return</span> a + b
+}</code></pre>
+            <p class="return-card__note">Zwraca liczbę całkowitą</p>
+          </div>
+
+          <div class="return-card">
+            <div class="return-card__type"><span class="type">String</span></div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">powitanie</span>(<span class="param">n</span>: <span class="type">String</span>): <span class="type">String</span> {
+    <span class="k">return</span> <span class="str">"Cześć, $n!"</span>
+}</code></pre>
+            <p class="return-card__note">Zwraca tekst</p>
+          </div>
+
+          <div class="return-card return-card--unit">
+            <div class="return-card__type"><span class="type">Unit</span></div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">loguj</span>(<span class="param">msg</span>: <span class="type">String</span>): <span class="type">Unit</span> {
+    println(msg)
+}</code></pre>
+            <p class="return-card__note">Nic nie zwraca — odpowiednik <code>void</code>. Można pominąć.</p>
+          </div>
+
+          <div class="return-card">
+            <div class="return-card__type">wyrażenie</div>
+            <pre class="code-block"><code><span class="k">fun</span> <span class="fn">kwadrat</span>(<span class="param">x</span>: <span class="type">Int</span>) = x * x</code></pre>
+            <p class="return-card__note">Skrócona forma — typ wnioskowany automatycznie</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- ── Blok 4: Interaktywny przykład ── -->
+      <div class="theory__block">
+        <h3 class="theory__block-title"><span class="theory__num">04</span> Interaktywny przykład — uruchom funkcję</h3>
+        <p class="theory__text">Wpisz dane i kliknij „Uruchom" — zobaczysz jak funkcja przetwarza parametry i zwraca wynik.</p>
+
+        <div class="simulator">
+          <div class="simulator__code">
+            <pre class="code-block code-block--full"><code><span class="k">fun</span> <span class="fn">opisOsoby</span>(
+    <span class="param">imię</span>: <span class="type">String</span>,
+    <span class="param">wiek</span>: <span class="type">Int</span>,
+    <span class="param">język</span>: <span class="type">String</span> = <span class="str">"Kotlin"</span>
+): <span class="type">String</span> {
+    <span class="k">return</span> <span class="str">"$imię ma $wiek lat i uczy się $języka."</span>
+}</code></pre>
+          </div>
+
+          <div class="simulator__inputs">
+            <div class="sim-field">
+              <label class="sim-field__label" for="sim-imie">imię: <span class="type">String</span></label>
+              <input class="sim-field__input" type="text" id="sim-imie" value="Anna" maxlength="20" />
+            </div>
+            <div class="sim-field">
+              <label class="sim-field__label" for="sim-wiek">wiek: <span class="type">Int</span></label>
+              <input class="sim-field__input" type="number" id="sim-wiek" value="22" min="1" max="120" />
+            </div>
+            <div class="sim-field">
+              <label class="sim-field__label" for="sim-jezyk">język: <span class="type">String</span> <span class="sim-default">(domyślnie "Kotlin")</span></label>
+              <input class="sim-field__input" type="text" id="sim-jezyk" value="Kotlin" maxlength="20" />
+            </div>
+          </div>
+
+          <button class="btn btn--primary sim-run" id="simRun">▶ Uruchom funkcję</button>
+
+          <div class="simulator__output" id="simOutput" aria-live="polite">
+            <span class="sim-output__label">// wynik:</span>
+            <span class="sim-output__val" id="simResult">— kliknij Uruchom —</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Nawigacja do kolejnego modułu -->
+      <div class="theory__nav">
+        <span class="theory__nav-info">Gotowy na ćwiczenia?</span>
+        <a href="#modul-2" class="btn btn--primary">Przejdź do Quizu ABCD <span>→</span></a>
+      </div>
+
+    </div><!-- /.theory__container -->
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       POZOSTAŁE MODUŁY (karty — placeholder)
+  ════════════════════════════════════════ -->
+  <div class="divider" id="modul-2"><span>KOLEJNE MODUŁY</span></div>
+
+  <div class="modules">
+    <article class="module-card">
       <header class="module-card__header">
         <span class="module-card__num">02</span>
-        <span class="module-card__tag">Beta</span>
+        <span class="module-card__tag">Quiz</span>
       </header>
-      <h2 class="module-card__title">Dane</h2>
-      <p class="module-card__desc">Import, eksport i zarządzanie zbiorami danych. Obsługa formatów CSV, JSON, XML.</p>
+      <h2 class="module-card__title">Quiz ABCD</h2>
+      <p class="module-card__desc">Pytania jednokrotnego wyboru z 4 odpowiedziami i informacją zwrotną.</p>
       <footer class="module-card__footer">
-        <a href="#modul-2" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
+        <span class="btn btn--ghost" style="opacity:.4;cursor:not-allowed;">Wkrótce</span>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
     <article class="module-card" id="modul-3">
       <header class="module-card__header">
         <span class="module-card__num">03</span>
-        <span class="module-card__tag">Nowy</span>
+        <span class="module-card__tag">Drag & Drop</span>
       </header>
-      <h2 class="module-card__title">Analiza</h2>
-      <p class="module-card__desc">Narzędzia analityczne: wykresy, filtrowanie, agregacje i eksport wyników do raportów.</p>
+      <h2 class="module-card__title">Bloczki</h2>
+      <p class="module-card__desc">Przeciąganie fragmentów kodu we właściwej kolejności.</p>
       <footer class="module-card__footer">
-        <a href="#modul-3" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--warn">● Ładowanie</span>
+        <span class="btn btn--ghost" style="opacity:.4;cursor:not-allowed;">Wkrótce</span>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
     <article class="module-card" id="modul-4">
       <header class="module-card__header">
         <span class="module-card__num">04</span>
-        <span class="module-card__tag">Stabilny</span>
+        <span class="module-card__tag">Kod</span>
       </header>
-      <h2 class="module-card__title">Raporty</h2>
-      <p class="module-card__desc">Generowanie i harmonogramowanie raportów PDF/Excel. Historia i archiwum dokumentów.</p>
+      <h2 class="module-card__title">Uzupełnianie kodu</h2>
+      <p class="module-card__desc">Wpisywanie brakujących fragmentów kodu w puste pola.</p>
       <footer class="module-card__footer">
-        <a href="#modul-4" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--ok">● Online</span>
+        <span class="btn btn--ghost" style="opacity:.4;cursor:not-allowed;">Wkrótce</span>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
 
     <article class="module-card" id="modul-5">
       <header class="module-card__header">
         <span class="module-card__num">05</span>
-        <span class="module-card__tag">Admin</span>
+        <span class="module-card__tag">Fiszki</span>
       </header>
-      <h2 class="module-card__title">Ustawienia</h2>
-      <p class="module-card__desc">Konfiguracja konta, uprawnień, motywu interfejsu i parametrów systemowych.</p>
+      <h2 class="module-card__title">Flashcards</h2>
+      <p class="module-card__desc">Interaktywne karty z pytaniem i ukrytą odpowiedzią.</p>
       <footer class="module-card__footer">
-        <a href="#modul-5" class="btn btn--ghost">Otwórz</a>
-        <span class="module-card__status module-card__status--off">● Offline</span>
+        <span class="btn btn--ghost" style="opacity:.4;cursor:not-allowed;">Wkrótce</span>
+        <span class="module-card__status module-card__status--warn">● W budowie</span>
       </footer>
     </article>
+  </div>
 
   </main>
 
   <!-- FOOTER -->
   <footer class="site-footer">
-    <span>AppModules © 2025</span>
+    <span>Kotlin Learn © 2025</span>
     <span>Zbudowano mobilnie-first · CSS + HTML + JS</span>
   </footer>
 

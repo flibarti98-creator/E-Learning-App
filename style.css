@@ -300,17 +300,7 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   white-space: nowrap;
 }
 
-/* =============================================
-   MODULES GRID
-   ============================================= */
-.modules {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: var(--sp-4);
-  padding: 0 var(--sp-8) var(--sp-24);
-  max-width: 1400px;
-  margin: 0 auto;
-}
+/* .modules grid przeniesiony do sekcji MODUŁ TEORII na dole */
 
 /* MODULE CARD */
 .module-card {
@@ -497,4 +487,346 @@ button { cursor: pointer; border: none; background: none; font: inherit; }
   outline: 2px solid var(--clr-accent);
   outline-offset: 3px;
   border-radius: var(--radius);
+}
+
+/* =============================================
+   MODUŁ TEORII
+   ============================================= */
+.theory {
+  padding: var(--sp-12) var(--sp-8) var(--sp-16);
+  scroll-margin-top: var(--nav-h);
+}
+
+.theory__container {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-12);
+}
+
+.theory__header {
+  animation: fadeUp 0.6s ease both;
+}
+
+.theory__eyebrow {
+  font-size: var(--fs-xs);
+  color: var(--clr-accent);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: var(--sp-3);
+  display: block;
+}
+
+.theory__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--sp-4);
+}
+
+.theory__lead {
+  font-size: var(--fs-base);
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+  max-width: 620px;
+}
+
+/* ── Bloki teorii ── */
+.theory__block {
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+  padding: var(--sp-8);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-6);
+  animation: fadeUp 0.6s ease both;
+}
+
+.theory__block-title {
+  font-family: var(--font-display);
+  font-size: var(--fs-xl);
+  display: flex;
+  align-items: center;
+  gap: var(--sp-4);
+  letter-spacing: -0.01em;
+}
+
+.theory__num {
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  color: var(--clr-accent);
+  background: rgba(212,255,0,0.08);
+  border: 1px solid rgba(212,255,0,0.2);
+  border-radius: var(--radius);
+  padding: 2px 8px;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+.theory__text {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+  line-height: 1.75;
+}
+
+/* ── Syntax highlight tokens ── */
+.k    { color: #c792ea; }
+.fn   { color: #82aaff; }
+.param{ color: #f07178; }
+.type { color: #ffcb6b; }
+.str  { color: #c3e88d; }
+.val  { color: var(--clr-accent); }
+
+/* ── Code blocks ── */
+.code-block {
+  background: #0a0a0a;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-6);
+  overflow-x: auto;
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 1.8;
+  tab-size: 2;
+}
+
+.code-block--full {
+  width: 100%;
+}
+
+/* ── Anatomy diagram ── */
+.anatomy {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.anatomy__code {
+  background: #0a0a0a;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: var(--sp-6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  line-height: 2;
+  overflow-x: auto;
+}
+
+.anatomy__labels {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp-3);
+}
+
+.anatomy__label {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+}
+
+.anatomy__pill {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: var(--fs-xs);
+  padding: 2px 10px;
+  border-radius: 100px;
+  font-weight: 500;
+  width: fit-content;
+}
+
+.anatomy__pill--kw    { background: rgba(199,146,234,0.15); color: #c792ea; border: 1px solid rgba(199,146,234,0.3); }
+.anatomy__pill--fn    { background: rgba(130,170,255,0.15); color: #82aaff; border: 1px solid rgba(130,170,255,0.3); }
+.anatomy__pill--param { background: rgba(240,113,120,0.15); color: #f07178; border: 1px solid rgba(240,113,120,0.3); }
+.anatomy__pill--ret   { background: rgba(255,203,107,0.15); color: #ffcb6b; border: 1px solid rgba(255,203,107,0.3); }
+
+/* ── Code examples grid ── */
+.code-examples {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--sp-4);
+}
+
+.code-example {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.code-example__label {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding-bottom: var(--sp-1);
+  border-bottom: 1px solid var(--clr-border);
+}
+
+/* ── Return grid ── */
+.return-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: var(--sp-4);
+}
+
+.return-card {
+  background: var(--clr-surface-2);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: var(--sp-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-3);
+  transition: border-color var(--transition);
+}
+
+.return-card:hover { border-color: var(--clr-accent); }
+
+.return-card--unit {
+  border-color: rgba(212,255,0,0.2);
+}
+
+.return-card__type {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.return-card__note {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  margin-top: auto;
+}
+
+/* ── Simulator ── */
+.simulator {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-4);
+}
+
+.simulator__inputs {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--sp-3);
+}
+
+.sim-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+}
+
+.sim-field__label {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+  letter-spacing: 0.06em;
+}
+
+.sim-default {
+  color: var(--clr-text-muted);
+  opacity: 0.6;
+}
+
+.sim-field__input {
+  background: #0a0a0a;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  color: var(--clr-text);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  padding: var(--sp-2) var(--sp-3);
+  transition: border-color var(--transition);
+  width: 100%;
+}
+
+.sim-field__input:focus {
+  outline: none;
+  border-color: var(--clr-accent);
+}
+
+.sim-run {
+  align-self: flex-start;
+}
+
+.simulator__output {
+  background: #0a0a0a;
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius);
+  padding: var(--sp-4) var(--sp-6);
+  font-family: var(--font-mono);
+  font-size: var(--fs-sm);
+  display: flex;
+  flex-direction: column;
+  gap: var(--sp-2);
+  min-height: 70px;
+  transition: border-color 0.3s ease;
+}
+
+.simulator__output.is-running {
+  border-color: var(--clr-accent);
+}
+
+.sim-output__label {
+  font-size: var(--fs-xs);
+  color: var(--clr-text-muted);
+}
+
+.sim-output__val {
+  color: var(--clr-accent);
+  font-weight: 500;
+  font-size: var(--fs-base);
+  min-height: 1.5em;
+}
+
+/* ── Nawigacja do kolejnego modułu ── */
+.theory__nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--sp-4);
+  padding: var(--sp-6) var(--sp-8);
+  background: var(--clr-surface);
+  border: 1px solid var(--clr-border);
+  border-radius: var(--radius-lg);
+}
+
+.theory__nav-info {
+  font-size: var(--fs-sm);
+  color: var(--clr-text-muted);
+}
+
+/* ── Moduły placeholder grid ── */
+.modules {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sp-4);
+  padding: var(--sp-8) var(--sp-8) var(--sp-24);
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* ── Responsywność teorii ── */
+@media (max-width: 768px) {
+  .theory { padding: var(--sp-8) var(--sp-4) var(--sp-12); }
+  .theory__block { padding: var(--sp-6) var(--sp-4); }
+  .anatomy__labels { grid-template-columns: 1fr 1fr; }
+  .theory__nav { flex-direction: column; align-items: flex-start; }
+  .modules { padding: var(--sp-4) var(--sp-4) var(--sp-16); }
+}
+
+@media (max-width: 480px) {
+  .anatomy__labels { grid-template-columns: 1fr; }
+  .code-examples { grid-template-columns: 1fr; }
+  .return-grid { grid-template-columns: 1fr; }
+  .simulator__inputs { grid-template-columns: 1fr; }
 }
