@@ -1,20 +1,20 @@
 /* ================================================================
-   DATA — exercises with code lines and gap definitions.
-
+   DATA
    Each exercise has:
-     title   – displayed in the card header
-     lines   – array of line descriptors:
-               { type: 'code', html }   → rendered as-is (highlighted HTML)
-               { type: 'gap',  before, answer, after, hint }
-                 before / after → highlighted HTML flanking the input
-                 answer         → correct keyword (trimmed, case-insensitive check)
-                 hint           → shown after MAX_ATTEMPTS wrong tries
+     title  – card header
+     lines  – array of:
+       { type:'code', html }          plain highlighted line
+       { type:'gap', before, answer, after, hint }
+         before/after = highlighted HTML flanking the input
+         answer       = correct keyword (case-insensitive)
+         hint         = shown after MAX_ATTEMPTS wrong tries
 ================================================================ */
 
-const MAX_ATTEMPTS = 2; // wrong tries before hint appears
+const MAX_ATTEMPTS = 2;
 
 const EXERCISES = [
-  /* ── 0: greet ───────────────────────────────────────────────── */
+
+  /* ── 0: greet ──────────────────────────────────────────────── */
   {
     title: 'Funkcja powitalna',
     lines: [
@@ -22,25 +22,20 @@ const EXERCISES = [
         type: 'gap',
         before: '',
         answer: 'fun',
-        after: ' <span class="fn">greet</span><span class="pun">(</span><span class="ty">name</span><span class="pun">:</span> <span class="ty">String</span><span class="pun">)</span><span class="pun">:</span> <span class="ty">String</span> <span class="pun">{</span>',
+        after: ' <span class="fn">greet</span><span class="pun">(</span>name<span class="pun">:</span> <span class="ty">String</span><span class="pun">):</span> <span class="ty">String</span> <span class="pun">{</span>',
         hint: 'Słowo kluczowe rozpoczynające definicję funkcji.',
       },
       { type: 'code', html: '    <span class="kw">return</span> <span class="str">"Cześć, $name!"</span>' },
       { type: 'code', html: '<span class="pun">}</span>' },
       { type: 'code', html: '' },
       { type: 'code', html: '<span class="kw">fun</span> <span class="fn">main</span><span class="pun">()</span> <span class="pun">{</span>' },
-      {
-        type: 'gap',
-        before: '    <span class="kw">val</span> msg <span class="op">=</span> <span class="fn">greet</span><span class="pun">(</span><span class="str">"Kotlin"</span><span class="pun">)</span>',
-        answer: '',
-        _skip: true, // line has no gap — rendered as plain code
-      },
+      { type: 'code', html: '    <span class="kw">val</span> msg <span class="op">=</span> <span class="fn">greet</span><span class="pun">(</span><span class="str">"Kotlin"</span><span class="pun">)</span>' },
       { type: 'code', html: '    <span class="fn">println</span><span class="pun">(</span>msg<span class="pun">)</span>' },
       { type: 'code', html: '<span class="pun">}</span>' },
     ],
   },
 
-  /* ── 1: square ──────────────────────────────────────────────── */
+  /* ── 1: square ─────────────────────────────────────────────── */
   {
     title: 'Kwadrat liczby',
     lines: [
@@ -48,7 +43,7 @@ const EXERCISES = [
         type: 'gap',
         before: '',
         answer: 'fun',
-        after: ' <span class="fn">square</span><span class="pun">(</span>n<span class="pun">:</span> <span class="ty">Int</span><span class="pun">)</span><span class="pun">:</span> <span class="ty">Int</span> <span class="pun">{</span>',
+        after: ' <span class="fn">square</span><span class="pun">(</span>n<span class="pun">:</span> <span class="ty">Int</span><span class="pun">):</span> <span class="ty">Int</span> <span class="pun">{</span>',
         hint: 'Słowo kluczowe do definiowania funkcji w Kotlin.',
       },
       {
@@ -62,7 +57,7 @@ const EXERCISES = [
     ],
   },
 
-  /* ── 2: isPositive ──────────────────────────────────────────── */
+  /* ── 2: isPositive ─────────────────────────────────────────── */
   {
     title: 'Czy liczba jest dodatnia?',
     lines: [
@@ -70,7 +65,7 @@ const EXERCISES = [
         type: 'gap',
         before: '',
         answer: 'fun',
-        after: ' <span class="fn">isPositive</span><span class="pun">(</span>n<span class="pun">:</span> <span class="ty">Int</span><span class="pun">)</span><span class="pun">:</span> <span class="ty">Boolean</span> <span class="pun">{</span>',
+        after: ' <span class="fn">isPositive</span><span class="pun">(</span>n<span class="pun">:</span> <span class="ty">Int</span><span class="pun">):</span> <span class="ty">Boolean</span> <span class="pun">{</span>',
         hint: 'Słowo kluczowe rozpoczynające definicję funkcji.',
       },
       { type: 'code', html: '    <span class="kw">if</span> <span class="pun">(</span>n <span class="op">&gt;</span> <span class="num">0</span><span class="pun">)</span> <span class="pun">{</span>' },
@@ -93,7 +88,7 @@ const EXERCISES = [
     ],
   },
 
-  /* ── 3: max ─────────────────────────────────────────────────── */
+  /* ── 3: max ────────────────────────────────────────────────── */
   {
     title: 'Maksimum dwóch liczb',
     lines: [
@@ -101,7 +96,7 @@ const EXERCISES = [
         type: 'gap',
         before: '',
         answer: 'fun',
-        after: ' <span class="fn">max</span><span class="pun">(</span>a<span class="pun">:</span> <span class="ty">Int</span><span class="pun">,</span> b<span class="pun">:</span> <span class="ty">Int</span><span class="pun">)</span><span class="pun">:</span> <span class="ty">Int</span> <span class="pun">{</span>',
+        after: ' <span class="fn">max</span><span class="pun">(</span>a<span class="pun">:</span> <span class="ty">Int</span><span class="pun">,</span> b<span class="pun">:</span> <span class="ty">Int</span><span class="pun">):</span> <span class="ty">Int</span> <span class="pun">{</span>',
         hint: 'Słowo kluczowe rozpoczynające definicję funkcji.',
       },
       { type: 'code', html: '    <span class="kw">if</span> <span class="pun">(</span>a <span class="op">&gt;</span> b<span class="pun">)</span> <span class="pun">{</span>' },
@@ -128,25 +123,22 @@ const EXERCISES = [
 /* ================================================================
    STATE
 ================================================================ */
-// Per-exercise: { gaps: [{attempts, solved}], allSolved }
 const state = EXERCISES.map(ex => {
   const gaps = ex.lines
-    .filter(l => l.type === 'gap' && !l._skip)
+    .filter(l => l.type === 'gap')
     .map(() => ({ attempts: 0, solved: false }));
   return { gaps, allSolved: false };
 });
 
-let totalScore  = 0;
-const maxScore  = state.reduce((s, ex) => s + ex.gaps.length, 0);
+let totalScore = 0;
+const maxScore = state.reduce((s, ex) => s + ex.gaps.length, 0);
 
 /* ================================================================
    BUILD DOM
 ================================================================ */
 function buildAll() {
   const container = document.getElementById('exercises');
-  EXERCISES.forEach((ex, exIdx) => {
-    container.appendChild(buildCard(ex, exIdx));
-  });
+  EXERCISES.forEach((ex, exIdx) => container.appendChild(buildCard(ex, exIdx)));
   updateScoreBar();
 }
 
@@ -156,60 +148,62 @@ function buildCard(ex, exIdx) {
   card.id = `ex-${exIdx}`;
 
   /* header */
-  card.innerHTML = `
-    <div class="exercise__header">
-      <div class="exercise__num">${exIdx + 1}</div>
-      <span class="exercise__title">${ex.title}</span>
-      <span class="exercise__badge" id="badge-${exIdx}">Oczekuje</span>
-    </div>`;
+  const header = document.createElement('div');
+  header.className = 'exercise__header';
+  header.innerHTML = `
+    <div class="exercise__num">${exIdx + 1}</div>
+    <span class="exercise__title">${ex.title}</span>
+    <span class="exercise__badge" id="badge-${exIdx}">Oczekuje</span>`;
+  card.appendChild(header);
 
   /* code snippet */
   const body = document.createElement('div');
   body.className = 'exercise__body';
-
   const snippet = document.createElement('div');
   snippet.className = 'code-snippet';
 
   let gapIdx = 0;
-  ex.lines.forEach((line, lineIdx) => {
+  ex.lines.forEach(line => {
     const row = document.createElement('div');
 
-    if (line.type === 'code' || line._skip) {
-      row.innerHTML = line.html || (line._skip ? line.before : '');
+    if (line.type === 'code') {
+      row.innerHTML = line.html;
     } else {
-      // gap line
-      const localGapIdx = gapIdx++;
-      const inputId = `gap-${exIdx}-${localGapIdx}`;
+      /* gap line */
+      const localIdx = gapIdx++;
+      const inputId  = `gap-${exIdx}-${localIdx}`;
 
-      const before = document.createElement('span');
-      before.innerHTML = line.before;
+      if (line.before) {
+        const b = document.createElement('span');
+        b.innerHTML = line.before;
+        row.appendChild(b);
+      }
 
       const input = document.createElement('input');
-      input.type        = 'text';
-      input.className   = 'gap';
-      input.id          = inputId;
-      input.dataset.ex  = exIdx;
-      input.dataset.gap = localGapIdx;
+      input.type          = 'text';
+      input.className     = 'gap';
+      input.id            = inputId;
+      input.dataset.ex    = exIdx;
+      input.dataset.gap   = localIdx;
       input.dataset.answer = line.answer;
-      input.dataset.hint   = line.hint || '';
-      input.autocomplete   = 'off';
-      input.spellcheck     = false;
-      input.setAttribute('aria-label', `Luka ${localGapIdx + 1} w ćwiczeniu ${exIdx + 1}`);
-      // dynamic width
-      input.style.width = Math.max(line.answer.length + 1, 5) + 'ch';
+      input.dataset.hint  = line.hint || '';
+      input.autocomplete  = 'off';
+      input.spellcheck    = false;
+      input.setAttribute('aria-label', `Luka ${localIdx + 1} w ćwiczeniu ${exIdx + 1}`);
+      input.style.width   = Math.max(line.answer.length + 2, 6) + 'ch';
       input.addEventListener('input', () => {
-        input.style.width = Math.max(input.value.length + 1, 5) + 'ch';
+        input.style.width = Math.max(input.value.length + 2, 6) + 'ch';
       });
       input.addEventListener('keydown', e => {
-        if (e.key === 'Enter') checkGap(exIdx, localGapIdx);
+        if (e.key === 'Enter') checkGap(exIdx, localIdx);
       });
-
-      const after = document.createElement('span');
-      after.innerHTML = line.after;
-
-      row.appendChild(before);
       row.appendChild(input);
-      row.appendChild(after);
+
+      if (line.after) {
+        const a = document.createElement('span');
+        a.innerHTML = line.after;
+        row.appendChild(a);
+      }
     }
 
     snippet.appendChild(row);
@@ -218,32 +212,31 @@ function buildCard(ex, exIdx) {
   body.appendChild(snippet);
   card.appendChild(body);
 
-  /* per-gap feedback rows */
-  const feedbackWrap = document.createElement('div');
-  feedbackWrap.className = 'exercise__footer';
-  for (let g = 0; g < state[exIdx].gaps.length; g++) {
-    const fb   = document.createElement('div');
+  /* feedback + hint rows (one pair per gap) */
+  const footerEl = document.createElement('div');
+  footerEl.className = 'exercise__footer';
+  const gapLines = ex.lines.filter(l => l.type === 'gap');
+  gapLines.forEach((gl, g) => {
+    const fb = document.createElement('div');
     fb.className = 'feedback';
     fb.id = `fb-${exIdx}-${g}`;
 
     const hint = document.createElement('div');
     hint.className = 'hint';
     hint.id = `hint-${exIdx}-${g}`;
-    // find the hint text for this gap
-    const gapLines = ex.lines.filter(l => l.type === 'gap' && !l._skip);
-    hint.textContent = '💡 Podpowiedź: ' + (gapLines[g]?.hint || '');
+    hint.textContent = '💡 Podpowiedź: ' + (gl.hint || '');
 
-    feedbackWrap.appendChild(fb);
-    feedbackWrap.appendChild(hint);
-  }
-  card.appendChild(feedbackWrap);
+    footerEl.appendChild(fb);
+    footerEl.appendChild(hint);
+  });
+  card.appendChild(footerEl);
 
   /* actions */
   const actions = document.createElement('div');
   actions.className = 'exercise__actions';
   actions.innerHTML = `
     <div class="attempts-indicator" id="dots-${exIdx}"></div>
-    <button class="btn btn--ghost" onclick="resetExercise(${exIdx})">Resetuj</button>
+    <button class="btn btn--ghost"   onclick="resetExercise(${exIdx})">Resetuj</button>
     <button class="btn btn--primary" onclick="checkAll(${exIdx})">Sprawdź</button>`;
   card.appendChild(actions);
 
@@ -252,11 +245,10 @@ function buildCard(ex, exIdx) {
 }
 
 /* ================================================================
-   CHECK LOGIC
+   CHECK
 ================================================================ */
 function checkGap(exIdx, gapIdx) {
-  const st    = state[exIdx];
-  const gapSt = st.gaps[gapIdx];
+  const gapSt = state[exIdx].gaps[gapIdx];
   if (gapSt.solved) return;
 
   const input  = document.getElementById(`gap-${exIdx}-${gapIdx}`);
@@ -264,55 +256,46 @@ function checkGap(exIdx, gapIdx) {
   const hint   = document.getElementById(`hint-${exIdx}-${gapIdx}`);
   const answer = input.dataset.answer.trim();
   const given  = input.value.trim();
-
   if (!given) return;
 
   if (given.toLowerCase() === answer.toLowerCase()) {
-    // correct
     gapSt.solved = true;
     input.classList.remove('incorrect');
     input.classList.add('correct');
-    input.value = answer; // normalise case
+    input.value = answer;
     showFeedback(fb, true, '✓ Poprawnie!');
     hint.classList.remove('show');
     totalScore++;
     updateScoreBar();
     checkExerciseDone(exIdx);
   } else {
-    // wrong
     gapSt.attempts++;
     input.classList.remove('correct');
+    // re-trigger shake
+    input.classList.remove('incorrect');
+    void input.offsetWidth;
     input.classList.add('incorrect');
-    void input.offsetWidth; // retrigger animation
-    showFeedback(fb, false, `✗ Nieprawidłowo. Spróbuj jeszcze raz.`);
-
+    showFeedback(fb, false, '✗ Nieprawidłowo. Spróbuj jeszcze raz.');
     if (gapSt.attempts >= MAX_ATTEMPTS) {
       hint.classList.add('show');
       input.classList.add('hint-shown');
     }
   }
-
   updateDots(exIdx);
 }
 
 function checkAll(exIdx) {
-  const ex = EXERCISES[exIdx];
   let gapIdx = 0;
-  ex.lines.forEach(line => {
-    if (line.type === 'gap' && !line._skip) {
-      checkGap(exIdx, gapIdx++);
-    }
+  EXERCISES[exIdx].lines.forEach(line => {
+    if (line.type === 'gap') checkGap(exIdx, gapIdx++);
   });
 }
 
 function checkExerciseDone(exIdx) {
-  const st = state[exIdx];
-  if (st.gaps.every(g => g.solved)) {
-    st.allSolved = true;
-    const card  = document.getElementById(`ex-${exIdx}`);
-    const badge = document.getElementById(`badge-${exIdx}`);
-    card.classList.add('solved');
-    badge.textContent = 'Ukończono';
+  if (state[exIdx].gaps.every(g => g.solved)) {
+    state[exIdx].allSolved = true;
+    document.getElementById(`ex-${exIdx}`).classList.add('solved');
+    document.getElementById(`badge-${exIdx}`).textContent = 'Ukończono';
   }
 }
 
@@ -320,33 +303,26 @@ function checkExerciseDone(exIdx) {
    RESET
 ================================================================ */
 function resetExercise(exIdx) {
-  const ex  = EXERCISES[exIdx];
-  const st  = state[exIdx];
+  const ex = EXERCISES[exIdx];
+  const st = state[exIdx];
 
-  // subtract previously earned points
-  const earned = st.gaps.filter(g => g.solved).length;
-  totalScore = Math.max(0, totalScore - earned);
-
-  // reset state
+  totalScore = Math.max(0, totalScore - st.gaps.filter(g => g.solved).length);
   st.gaps.forEach(g => { g.attempts = 0; g.solved = false; });
   st.allSolved = false;
 
-  // reset DOM
-  const card  = document.getElementById(`ex-${exIdx}`);
-  const badge = document.getElementById(`badge-${exIdx}`);
-  card.classList.remove('solved', 'errored');
-  badge.textContent = 'Oczekuje';
+  document.getElementById(`ex-${exIdx}`).classList.remove('solved', 'errored');
+  document.getElementById(`badge-${exIdx}`).textContent = 'Oczekuje';
 
   let gapIdx = 0;
   ex.lines.forEach(line => {
-    if (line.type === 'gap' && !line._skip) {
+    if (line.type === 'gap') {
       const input = document.getElementById(`gap-${exIdx}-${gapIdx}`);
       const fb    = document.getElementById(`fb-${exIdx}-${gapIdx}`);
       const hint  = document.getElementById(`hint-${exIdx}-${gapIdx}`);
       input.value = '';
       input.className = 'gap';
-      input.style.width = Math.max(line.answer.length + 1, 5) + 'ch';
-      fb.className   = 'feedback';
+      input.style.width = Math.max(line.answer.length + 2, 6) + 'ch';
+      fb.className = 'feedback';
       fb.textContent = '';
       hint.classList.remove('show');
       gapIdx++;
@@ -367,8 +343,7 @@ function showFeedback(el, ok, msg) {
 
 function updateDots(exIdx) {
   const wrap   = document.getElementById(`dots-${exIdx}`);
-  const st     = state[exIdx];
-  const totalA = st.gaps.reduce((s, g) => s + g.attempts, 0);
+  const totalA = state[exIdx].gaps.reduce((s, g) => s + g.attempts, 0);
   wrap.innerHTML = '';
   for (let i = 0; i < MAX_ATTEMPTS; i++) {
     const dot = document.createElement('span');
@@ -378,11 +353,10 @@ function updateDots(exIdx) {
 }
 
 function updateScoreBar() {
-  const fill = document.getElementById('score-fill');
-  const val  = document.getElementById('score-value');
-  fill.style.width = (totalScore / maxScore * 100) + '%';
-  val.textContent  = `${totalScore} / ${maxScore}`;
-  // bump animation
+  document.getElementById('score-fill').style.width =
+    (maxScore > 0 ? totalScore / maxScore * 100 : 0) + '%';
+  document.getElementById('score-value').textContent = `${totalScore} / ${maxScore}`;
+  const val = document.getElementById('score-value');
   val.classList.remove('bump');
   void val.offsetWidth;
   val.classList.add('bump');
@@ -391,4 +365,4 @@ function updateScoreBar() {
 /* ================================================================
    INIT
 ================================================================ */
-document.addEventListener('DOMContentLoaded', buildAll);
+buildAll();
