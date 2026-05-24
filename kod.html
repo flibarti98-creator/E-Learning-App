@@ -7,40 +7,45 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="kod.css" />
 </head>
-<body data-page="kod">
+<body>
+
+  <header class="page-header">
+    <a href="bloczki.html" class="page-header__back">← Bloczki</a>
+    <span class="page-header__eyebrow">Moduł 04 · Uzupełnianie</span>
+  </header>
 
   <main>
-    <section class="theory">
-      <div class="theory__container">
+    <h1 class="module-title">Uzupełnianie kodu</h1>
+    <p class="module-lead">
+      Wpisz brakujące słowa kluczowe (<code>fun</code>, <code>return</code>) w puste miejsca.
+      Po <strong>2</strong> błędnych próbach pojawi się podpowiedź.
+    </p>
 
-        <div class="theory__header">
-          <span class="theory__eyebrow">Moduł 04 · Uzupełnianie</span>
-          <h1 class="theory__title">Uzupełnianie kodu</h1>
-          <p class="theory__lead">Wpisz brakujące słowa kluczowe (<code>fun</code>, <code>return</code>) w puste miejsca w kodzie.</p>
-        </div>
-
-        <div class="theory__block" style="align-items:center;text-align:center;padding:4rem 2rem;">
-          <span style="font-size:3rem;">🚧</span>
-          <h2 class="theory__block-title" style="justify-content:center;">W budowie</h2>
-          <p class="theory__text">Ten moduł jest w trakcie implementacji. Wróć wkrótce!</p>
-        </div>
-
-        <div class="theory__nav">
-          <a href="bloczki.html" class="btn btn--ghost">← Bloczki</a>
-          <a href="fiszki.html" class="btn btn--primary">Fiszki →</a>
-        </div>
-
+    <!-- score bar -->
+    <div class="score-bar">
+      <span class="score-label">Punkty</span>
+      <div class="score-progress">
+        <div class="score-progress__fill" id="score-fill"></div>
       </div>
-    </section>
+      <span class="score-value" id="score-value">0 / 0</span>
+    </div>
+
+    <!-- exercises injected by JS -->
+    <div id="exercises"></div>
+
+    <div class="nav-row">
+      <a href="bloczki.html" class="btn btn--ghost">← Bloczki</a>
+      <a href="fiszki.html"  class="btn btn--primary">Fiszki →</a>
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <span>Kotlin Learn © 2025</span>
     <span>Moduł 04 · Uzupełnianie kodu</span>
   </footer>
 
-  <script src="../js/navbar.js"></script>
+  <script src="kod.js"></script>
 </body>
 </html>
