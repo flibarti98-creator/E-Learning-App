@@ -1,0 +1,272 @@
+/* ─── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HEADER & MAIN LAYOUT ─────────────────────────────────── */
+.page-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page-header__back {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: .05em;
+  transition: color .2s;
+}
+.page-header__back:hover { color: var(--text); }
+.page-header__eyebrow {
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: auto;
+}
+
+main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width: 100%; }
+
+.module-title {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  line-height: 1.1;
+  margin-bottom: .5rem;
+}
+.module-lead {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 2rem;
+  max-width: 60ch;
+}
+
+/* ─── PROGRESS BAR ───────────────────────────────────────────── */
+.progress-wrap {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 3rem;
+  padding: 1rem 1.5rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+.progress-bar {
+  flex: 1;
+  height: 6px;
+  background: var(--border);
+  border-radius: 3px;
+  overflow: hidden;
+}
+.progress-bar__fill {
+  height: 100%;
+  background: var(--success);
+  border-radius: 3px;
+  width: 0%;
+  transition: width .5s cubic-bezier(.4,0,.2,1);
+}
+.progress-text { 
+  font-size: 12px; 
+  color: var(--text-muted); 
+  white-space: nowrap; 
+  letter-spacing: .05em;
+}
+
+/* ─── FLASHCARD 3D SCENE ─────────────────────────────────────── */
+.flashcard-scene {
+  perspective: 1200px;
+  width: 100%;
+  max-width: 640px;
+  height: 380px;
+  margin: 0 auto 2.5rem;
+  cursor: pointer;
+}
+
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+  box-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+  border-radius: var(--radius);
+}
+
+.flashcard.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 3rem 2rem;
+  text-align: center;
+  background: var(--surface);
+  transition: border-color 0.3s;
+}
+
+.flashcard__face--back {
+  transform: rotateY(180deg);
+  background: var(--surface2);
+}
+
+/* ─── FLASHCARD CONTENT ──────────────────────────────────────── */
+.flashcard__badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-size: 10px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  padding: .3rem .75rem;
+  border-radius: 4px;
+  background: var(--surface2);
+  color: var(--text-muted);
+  transition: background 0.3s, color 0.3s;
+}
+.flashcard.is-learned .flashcard__badge {
+  background: var(--success-bg);
+  color: var(--success);
+}
+.flashcard.is-learned .flashcard__face {
+  border-color: var(--success);
+}
+
+.flashcard__concept {
+  font-family: var(--serif);
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.flashcard__content {
+  font-size: 15px;
+  color: var(--text);
+  line-height: 1.6;
+  max-width: 500px;
+}
+
+.flashcard__content p {
+  margin-bottom: 1.25rem;
+}
+
+.flashcard__content pre {
+  background: #0a0a0c;
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-size: 13px;
+  text-align: left;
+  overflow-x: auto;
+  white-space: pre-wrap;
+}
+
+/* Kotlin syntax highlighting (reused logic) */
+.kw  { color: #c084fc; } 
+.fn  { color: #7dd3fc; } 
+.str { color: #86efac; } 
+.num { color: #fca5a5; } 
+.ty  { color: #fcd34d; } 
+.op  { color: #94a3b8; } 
+
+.flashcard__hint {
+  position: absolute;
+  bottom: 1.25rem;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: .05em;
+}
+
+/* ─── ACTIONS ────────────────────────────────────────────────── */
+.flashcard-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 640px;
+  margin: 0 auto;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.btn {
+  font-family: var(--mono);
+  font-size: 12px;
+  letter-spacing: .08em;
+  padding: .65rem 1.25rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+}
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn--primary:hover { background: #6657e8; }
+.btn--primary.is-active {
+  background: var(--success);
+  border-color: var(--success);
+  color: #000;
+}
+.btn--ghost {
+  background: transparent;
+  color: var(--text-muted);
+  border-color: var(--border);
+}
+.btn--ghost:hover:not(:disabled) { 
+  color: var(--text); 
+  border-color: var(--text-muted); 
+}
+.btn:disabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+/* ─── NAV & FOOTER ───────────────────────────────────────────── */
+.nav-row {
+  display: flex;
+  gap: 1rem;
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  padding-top: 2rem;
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+  letter-spacing: .05em;
+}
+
+/* ─── MOBILE ─────────────────────────────────────────────────── */
+@media (max-width: 600px) {
+  main { padding: 2rem 1rem 4rem; }
+  .flashcard-scene { height: 420px; }
+  .flashcard__face { padding: 2rem 1.5rem; }
+  .flashcard-actions { justify-content: center; }
+  .btn--primary { order: -1; width: 100%; margin-bottom: 0.5rem; }
+}
