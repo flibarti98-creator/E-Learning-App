@@ -356,10 +356,14 @@ function updateScoreBar() {
   document.getElementById('score-fill').style.width =
     (maxScore > 0 ? totalScore / maxScore * 100 : 0) + '%';
   document.getElementById('score-value').textContent = `${totalScore} / ${maxScore}`;
+  
   const val = document.getElementById('score-value');
   val.classList.remove('bump');
   void val.offsetWidth;
   val.classList.add('bump');
+
+  // NOWE: Zapisanie wyniku punktowego do localStorage dla Modułu 06 (Podsumowanie)
+  localStorage.setItem('kotlin_learn_kod_score', totalScore);
 }
 
 /* ================================================================
