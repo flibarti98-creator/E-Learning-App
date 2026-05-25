@@ -8,39 +8,60 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="fiszki.css" />
 </head>
 <body data-page="fiszki">
 
+  <header class="page-header">
+    <a href="kod.html" class="page-header__back">← Kod</a>
+    <span class="page-header__eyebrow">Moduł 05 · Fiszki</span>
+  </header>
+
   <main>
-    <section class="theory">
-      <div class="theory__container">
+    <h1 class="module-title">Fiszki o funkcjach</h1>
+    <p class="module-lead">Kliknij kartę, aby ją obrócić i poznać definicję lub przykład. Kiedy przyswoisz pojęcie, oznacz je jako nauczone.</p>
 
-        <div class="theory__header">
-          <span class="theory__eyebrow">Moduł 05 · Flashcards</span>
-          <h1 class="theory__title">Fiszki</h1>
-          <p class="theory__lead">Interaktywne karty z pytaniem i ukrytą odpowiedzią — kliknij kartę, żeby obrócić.</p>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-bar__fill" id="progress-fill"></div></div>
+      <span class="progress-text" id="progress-text">0 / 8 nauczone</span>
+    </div>
+
+    <div class="flashcard-scene">
+      <div class="flashcard" id="flashcard">
+        
+        <div class="flashcard__face flashcard__face--front">
+          <span class="flashcard__badge" id="badge-front">Do nauki</span>
+          <h2 class="flashcard__concept" id="card-concept">Słowo kluczowe fun</h2>
+          <span class="flashcard__hint">Kliknij, aby obrócić ↻</span>
         </div>
-
-        <div class="theory__block" style="align-items:center;text-align:center;padding:4rem 2rem;">
-          <span style="font-size:3rem;">🚧</span>
-          <h2 class="theory__block-title" style="justify-content:center;">W budowie</h2>
-          <p class="theory__text">Ten moduł jest w trakcie implementacji. Wróć wkrótce!</p>
-        </div>
-
-        <div class="theory__nav">
-          <a href="kod.html" class="btn btn--ghost">← Uzupełnianie kodu</a>
-          <a href="../index.html" class="btn btn--primary">Powrót do menu →</a>
+        
+        <div class="flashcard__face flashcard__face--back">
+          <span class="flashcard__badge" id="badge-back">Do nauki</span>
+          <div class="flashcard__content" id="card-definition"></div>
+          <span class="flashcard__hint">Kliknij, aby obrócić ↻</span>
         </div>
 
       </div>
-    </section>
+    </div>
+
+    <div class="flashcard-actions">
+      <button class="btn btn--ghost" id="btn-prev" disabled>← Poprzednia</button>
+      <button class="btn btn--primary" id="btn-learn">✓ Oznacz jako nauczone</button>
+      <button class="btn btn--ghost" id="btn-next">Następna →</button>
+    </div>
+
+    <div class="nav-row">
+      <a href="kod.html" class="btn btn--ghost">← Uzupełnianie kodu</a>
+      <a href="../index.html" class="btn btn--primary">Powrót do menu →</a>
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <span>Kotlin Learn © 2025</span>
     <span>Moduł 05 · Fiszki</span>
   </footer>
 
   <script src="../js/navbar.js"></script>
+  <script src="fiszki.js"></script>
 </body>
 </html>
