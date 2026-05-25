@@ -138,6 +138,7 @@ const maxScore = state.reduce((s, ex) => s + ex.gaps.length, 0);
 ================================================================ */
 function buildAll() {
   const container = document.getElementById('exercises');
+  if (!container) return;
   EXERCISES.forEach((ex, exIdx) => container.appendChild(buildCard(ex, exIdx)));
   updateScoreBar();
 }
@@ -271,7 +272,6 @@ function checkGap(exIdx, gapIdx) {
   } else {
     gapSt.attempts++;
     input.classList.remove('correct');
-    // re-trigger shake
     input.classList.remove('incorrect');
     void input.offsetWidth;
     input.classList.add('incorrect');
@@ -343,6 +343,7 @@ function showFeedback(el, ok, msg) {
 
 function updateDots(exIdx) {
   const wrap   = document.getElementById(`dots-${exIdx}`);
+  if (!wrap) return;
   const totalA = state[exIdx].gaps.reduce((s, g) => s + g.attempts, 0);
   wrap.innerHTML = '';
   for (let i = 0; i < MAX_ATTEMPTS; i++) {
@@ -353,20 +354,21 @@ function updateDots(exIdx) {
 }
 
 function updateScoreBar() {
-  document.getElementById('score-fill').style.width =
-    (maxScore > 0 ? totalScore / maxScore * 100 : 0) + '%';
-  document.getElementById('score-value').textContent = `${totalScore} / ${maxScore}`;
-  
+  const fill = document.getElementById('score-fill');
   const val = document.getElementById('score-value');
-  val.classList.remove('bump');
-  void val.offsetWidth;
-  val.classList.add('bump');
+  if (fill) fill.style.width = (maxScore > 0 ? totalScore / maxScore * 100 : 0) + '%';
+  if (val) {
+    val.textContent = `${totalScore} / ${maxScore}`;
+    val.classList.remove('bump');
+    void val.offsetWidth;
+    val.classList.add('bump');
+  }
 
-  // NOWE: Zapisanie wyniku punktowego do localStorage dla Modułu 06 (Podsumowanie)
+  // Zapisanie wyniku do localStorage
   localStorage.setItem('kotlin_learn_kod_score', totalScore);
 }
 
 /* ================================================================
    INIT
 ================================================================ */
-buildAll();
+document.addEventListener('DOMContentLoaded', buildAll);
