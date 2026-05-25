@@ -1,61 +1,10 @@
 /* ─── RESET & BASE ─────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-:root {
-  --bg:          #0d0d0f;
-  --surface:     #141416;
-  --surface2:    #1c1c20;
-  --border:      #2a2a30;
-  --accent:      #7c6af7;
-  --accent-soft: #3d3566;
-  --success:     #3ecf8e;
-  --success-bg:  #0d2e20;
-  --error:       #f76a6a;
-  --error-bg:    #2e0d0d;
-  --warn:        #fbbf24;
-  --warn-bg:     #2d2007;
-  --text:        #e8e8f0;
-  --text-muted:  #6b6b80;
-  --mono:        'DM Mono', monospace;
-  --serif:       'DM Serif Display', serif;
-  --radius:      10px;
-}
+ 
 
 html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 15px;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ─── HEADER ────────────────────────────────────────────────── */
-.page-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.page-header__back {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: .05em;
-  transition: color .2s;
-}
-.page-header__back:hover { color: var(--text); }
-.page-header__eyebrow {
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-left: auto;
-}
+ 
 
 /* ─── MAIN ──────────────────────────────────────────────────── */
 main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width: 100%; }
@@ -306,10 +255,7 @@ main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width
 .btn--ghost { background: transparent; color: var(--text-muted); border-color: var(--border); }
 .btn--ghost:hover { color: var(--text); border-color: var(--text-muted); }
 .btn:disabled { opacity: .4; pointer-events: none; }
-
-/* ─── NAV ────────────────────────────────────────────────────── */
-.nav-row { display: flex; gap: 1rem; margin-top: 3rem; }
-
+ 
 /* ─── FOOTER ─────────────────────────────────────────────────── */
 footer {
   border-top: 1px solid var(--border);

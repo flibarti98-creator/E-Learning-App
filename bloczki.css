@@ -21,41 +21,9 @@
     }
  
     html { scroll-behavior: smooth; }
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--mono);
-      font-size: 15px;
-      line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
  
-    /* ─── HEADER ────────────────────────────────────────────────── */
-    .page-header {
-      border-bottom: 1px solid var(--border);
-      padding: 1.5rem 2rem;
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-    }
-    .page-header__back {
-      color: var(--text-muted);
-      text-decoration: none;
-      font-size: 13px;
-      letter-spacing: .05em;
-      transition: color .2s;
-    }
-    .page-header__back:hover { color: var(--text); }
-    .page-header__eyebrow {
-      font-size: 11px;
-      letter-spacing: .15em;
-      text-transform: uppercase;
-      color: var(--accent);
-      margin-left: auto;
-    }
- 
+    
+    
     /* ─── MAIN LAYOUT ───────────────────────────────────────────── */
     main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width: 100%; }
  
@@ -227,14 +195,6 @@
       transition: opacity .1s;
     }
  
-    /* Kotlin syntax highlight colours (lightweight) */
-    .kw  { color: #c084fc; } /* fun, val, var, if, else, return, for, in */
-    .fn  { color: #7dd3fc; } /* function names */
-    .str { color: #86efac; } /* strings */
-    .num { color: #fca5a5; } /* numbers */
-    .cm  { color: #4b5563; font-style:italic; } /* comments */
-    .ty  { color: #fcd34d; } /* types */
-    .op  { color: #94a3b8; } /* operators */
  
     /* ─── ACTIONS ────────────────────────────────────────────────── */
     .exercise__actions {
@@ -302,24 +262,9 @@
     }
     .progress-text { font-size: 11px; color: var(--text-muted); white-space: nowrap; }
  
-    /* ─── NAV ────────────────────────────────────────────────────── */
-    .nav-row {
-      display: flex;
-      gap: 1rem;
-      margin-top: 3rem;
-    }
+   
  
-    /* ─── FOOTER ─────────────────────────────────────────────────── */
-    footer {
-      border-top: 1px solid var(--border);
-      padding: 1.25rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      font-size: 11px;
-      color: var(--text-muted);
-      letter-spacing: .05em;
-    }
- 
+     
     /* ─── MOBILE ─────────────────────────────────────────────────── */
     @media (max-width: 600px) {
       main { padding: 2rem 1rem 4rem; }

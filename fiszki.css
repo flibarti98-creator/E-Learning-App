@@ -2,40 +2,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { scroll-behavior: smooth; }
-body {
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--mono);
-  font-size: 15px;
-  line-height: 1.6;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ─── HEADER & MAIN LAYOUT ─────────────────────────────────── */
-.page-header {
-  border-bottom: 1px solid var(--border);
-  padding: 1.5rem 2rem;
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-}
-.page-header__back {
-  color: var(--text-muted);
-  text-decoration: none;
-  font-size: 13px;
-  letter-spacing: .05em;
-  transition: color .2s;
-}
-.page-header__back:hover { color: var(--text); }
-.page-header__eyebrow {
-  font-size: 11px;
-  letter-spacing: .15em;
-  text-transform: uppercase;
-  color: var(--accent);
-  margin-left: auto;
-}
+ 
+ 
 
 main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width: 100%; }
 
@@ -241,25 +209,6 @@ main { flex: 1; padding: 3rem 2rem 5rem; max-width: 860px; margin: 0 auto; width
 .btn:disabled {
   opacity: 0.3;
   cursor: not-allowed;
-}
-
-/* ─── NAV & FOOTER ───────────────────────────────────────────── */
-.nav-row {
-  display: flex;
-  gap: 1rem;
-  margin-top: 4rem;
-  border-top: 1px solid var(--border);
-  padding-top: 2rem;
-}
-
-footer {
-  border-top: 1px solid var(--border);
-  padding: 1.25rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  font-size: 11px;
-  color: var(--text-muted);
-  letter-spacing: .05em;
 }
 
 /* ─── MOBILE ─────────────────────────────────────────────────── */
