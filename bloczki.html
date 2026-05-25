@@ -7,22 +7,18 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
-  <!-- Globalny styl projektu -->
   <link rel="stylesheet" href="../style.css" />
-  <!-- Styl specyficzny dla quizu -->
   <link rel="stylesheet" href="bloczki.css" />
 </head>
-<body>
+<body data-page= "bloczki" >
+  <main class="bloczki-page">
 
-  <header class="page-header">
-    <a href="quiz.html" class="page-header__back">← Quiz</a>
-    <span class="page-header__eyebrow">Moduł 03 · Drag &amp; Drop</span>
-  </header>
-
-  <main>
-    <h1 class="module-title">Bloczki</h1>
-    <p class="module-lead">Przeciągaj fragmenty kodu i układaj je w poprawnej kolejności, tworząc kompletną funkcję Kotlin.</p>
-
+    <div class="theory__header">
+          <span class="theory__eyebrow">Moduł 03 · Bloczki</span>
+          <h1 class="theory__title">Bloczki</h1>
+          <p class="theory__lead"> Przeciągaj fragmenty kodu i układaj je w poprawnej kolejności, tworząc kompletną funkcję Kotlin. <code>fun</code>.</p>
+        </div>
+   
     <div class="progress-wrap">
       <div class="progress-bar"><div class="progress-bar__fill" id="progress-fill"></div></div>
       <span class="progress-text" id="progress-text">0 / 3 ukończone</span>
@@ -31,7 +27,7 @@
     <!-- ══════════════════════════════════════════════════════════
          EXERCISE 1 — sumOfList
     ═══════════════════════════════════════════════════════════════ -->
-    <div class="exercise" id="ex-0">
+    <div class= "theory__block">
       <div class="exercise__header">
         <div class="exercise__num">1</div>
         <span class="exercise__title">Suma listy liczb</span>
@@ -102,18 +98,20 @@
       </div>
     </div>
 
-    <div class="nav-row">
-      <a href="quiz.html" class="btn btn--ghost">← Quiz</a>
-      <a href="kod.html"  class="btn btn--primary">Uzupełnianie kodu →</a>
+    <div class="theory__nav">
+          <a href="quiz.html" class="btn btn--ghost">← Quiz</a>
+          <a href="kod.html" class="btn btn--primary">Uzupełnianie kodu →</a>
     </div>
+
   </main>
 
-  <footer>
-    <span>Kotlin Learn © 2025</span>
+  <footer class="site-footer">
+    <span>Kotlin Learn © 2026</span>
     <span>Moduł 03 · Bloczki</span>
   </footer>
 
- <script src="bloczki.js"></script>
+  <script src="navbar.js" defer></script>
+  <script src="bloczki.js"></script>
  
 </body>
 </html>

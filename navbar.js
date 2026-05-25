@@ -13,6 +13,7 @@
     { num: '03', label: 'Bloczki',   href: 'bloczki.html',     key: 'bloczki'   },
     { num: '04', label: 'Kod',       href: 'kod.html',         key: 'kod'       },
     { num: '05', label: 'Fiszki',    href: 'fiszki.html',      key: 'fiszki'    },
+    { num: '06', label: 'Podsumowanie', href: 'podsumowanie.html', key: 'podsumowanie' },
   ];
 
   /* ── Generuj HTML navbara ── */
