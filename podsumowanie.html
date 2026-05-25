@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Podsumowanie Wyników — Kotlin Learn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="podsumowanie.css" />
+</head>
+<body data-page="podsumowanie">
+
+  <header class="page-header">
+    <a href="../index.html" class="page-header__back">← Menu Główne</a>
+    <span class="page-header__eyebrow">Koniec Kursu · Podsumowanie</span>
+  </header>
+
+  <main>
+    <div class="summary-wrapper">
+      <div class="summary-header">
+        <h1 class="module-title" id="summary-grade-title">Mierzenie wyników...</h1>
+        <p class="module-lead" id="summary-grade-desc">Trwa podliczanie punktów z Twoich modułów.</p>
+      </div>
+
+      <div class="score-radial-container">
+        <div class="score-percentage" id="score-percentage-text">0%</div>
+        <div class="score-total-points" id="score-total-text">0 / 0 punktów</div>
+      </div>
+
+      <div class="summary-progress-wrap">
+        <div class="summary-progress-bar">
+          <div class="summary-progress-bar__fill" id="summary-progress-fill"></div>
+        </div>
+      </div>
+
+      <div class="modules-breakdown">
+        <h3 class="breakdown-title">Rozbicie na moduły</h3>
+        
+        <div class="module-score-card">
+          <div class="card-meta">
+            <span class="card-num">02</span>
+            <span class="card-name">Quiz Wiedzy</span>
+          </div>
+          <div class="card-points" id="score-quiz">0 / 0</div>
+        </div>
+
+        <div class="module-score-card">
+          <div class="card-meta">
+            <span class="card-num">03</span>
+            <span class="card-name">Układanie Bloków Kodu</span>
+          </div>
+          <div class="card-points" id="score-bloczki">0 / 0</div>
+        </div>
+
+        <div class="module-score-card">
+          <div class="card-meta">
+            <span class="card-num">04</span>
+            <span class="card-name">Uzupełnianie Luk (Gaps)</span>
+          </div>
+          <div class="card-points" id="score-kod">0 / 0</div>
+        </div>
+      </div>
+
+      <div class="summary-actions">
+        <button class="btn btn--danger" id="btn-restart">↻ Zacznij od nowa (Reset)</button>
+        <a href="../index.html" class="btn btn--primary">Powrót do Menu Głównego →</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <span>Kotlin Learn © 2025</span>
+    <span>Ekran końcowy</span>
+  </footer>
+
+  <script src="../js/navbar.js"></script>
+  <script src="podsumowanie.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+/* ─── RESET & BASE ─────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--mono);
+  font-size: 15px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ─── HEADER LAYOUT ────────────────────────────────────────── */
+.page-header {
+  border-bottom: 1px solid var(--border);
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.page-header__back {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 13px;
+  letter-spacing: .05em;
+  transition: color .2s;
+}
+.page-header__back:hover { color: var(--text); }
+.page-header__eyebrow {
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-left: auto;
+}
+
+main { flex: 1; padding: 4rem 2rem 6rem; max-width: 760px; margin: 0 auto; width: 100%; }
+
+/* ─── CONTAINER STRUCT ─────────────────────────────────────── */
+.summary-wrapper {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 3.5rem 3rem;
+  text-align: center;
+}
+
+.summary-header {
+  margin-bottom: 2.5rem;
+}
+.module-title {
+  font-family: var(--serif);
+  font-size: clamp(2.2rem, 5vw, 3.8rem);
+  color: var(--text);
+  line-height: 1.1;
+  margin-bottom: .75rem;
+}
+.module-lead {
+  color: var(--text-muted);
+  font-size: 14px;
+  max-width: 50ch;
+  margin: 0 auto;
+}
+
+/* ─── BIG RADIAL SCORE DISPLAY ─────────────────────────────── */
+.score-radial-container {
+  margin: 2rem 0;
+}
+.score-percentage {
+  font-family: var(--serif);
+  font-size: clamp(4rem, 12vw, 6.5rem);
+  color: var(--accent);
+  line-height: 1;
+  font-weight: bold;
+}
+.score-total-text {
+  font-size: 14px;
+  color: var(--text-muted);
+  letter-spacing: .05em;
+  margin-top: 0.5rem;
+}
+
+/* ─── ANIMATED FILL-UP PROGRESS BAR ────────────────────────── */
+.summary-progress-wrap {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 3.5rem;
+}
+.summary-progress-bar {
+  width: 100%;
+  height: 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.summary-progress-bar__fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent), var(--success));
+  width: 0%;
+  border-radius: 4px;
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ─── DETAILED BREAKDOWN CARDS ─────────────────────────────── */
+.modules-breakdown {
+  text-align: left;
+  max-width: 540px;
+  margin: 0 auto 3.5rem;
+}
+.breakdown-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: .15em;
+  color: var(--text-muted);
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: .5rem;
+}
+.module-score-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  margin-bottom: .75rem;
+}
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+.card-num {
+  font-size: 12px;
+  color: var(--accent);
+  background: var(--accent-soft);
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  font-weight: 500;
+}
+.card-name {
+  font-size: 14px;
+  color: var(--text);
+}
+.card-points {
+  font-size: 14px;
+  font-weight: bold;
+  color: var(--text-muted);
+}
+
+/* ─── ACTION BUTTONS ────────────────────────────────────────── */
+.summary-actions {
+  display: flex;
+  justify-content: center;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+.btn {
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: .05em;
+  padding: .8rem 1.5rem;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: all .2s;
+  text-decoration: none;
+}
+.btn--primary {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+.btn--primary:hover { background: #6657e8; }
+.btn--danger {
+  background: transparent;
+  color: var(--error);
+  border-color: var(--error-bg);
+}
+.btn--danger:hover {
+  background: var(--error-bg);
+  border-color: var(--error);
+}
+
+footer {
+  border-top: 1px solid var(--border);
+  padding: 1.25rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+/* ─── MOBILE RESPONSIVENESS ────────────────────────────────── */
+@media (max-width: 600px) {
+  .summary-wrapper { padding: 2rem 1.25rem; }
+  .summary-actions { flex-direction: column; }
+  .summary-actions .btn { width: 100%; text-align: center; }
+}
