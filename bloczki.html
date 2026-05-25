@@ -7,40 +7,113 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet" />
+  <!-- Globalny styl projektu -->
   <link rel="stylesheet" href="../style.css" />
+  <!-- Styl specyficzny dla quizu -->
+  <link rel="stylesheet" href="bloczki.css" />
 </head>
-<body data-page="bloczki">
+<body>
+
+  <header class="page-header">
+    <a href="quiz.html" class="page-header__back">← Quiz</a>
+    <span class="page-header__eyebrow">Moduł 03 · Drag &amp; Drop</span>
+  </header>
 
   <main>
-    <section class="theory">
-      <div class="theory__container">
+    <h1 class="module-title">Bloczki</h1>
+    <p class="module-lead">Przeciągaj fragmenty kodu i układaj je w poprawnej kolejności, tworząc kompletną funkcję Kotlin.</p>
 
-        <div class="theory__header">
-          <span class="theory__eyebrow">Moduł 03 · Drag &amp; Drop</span>
-          <h1 class="theory__title">Bloczki</h1>
-          <p class="theory__lead">Przeciągaj fragmenty kodu i układaj je w poprawnej kolejności, tworząc kompletną funkcję Kotlin.</p>
-        </div>
+    <div class="progress-wrap">
+      <div class="progress-bar"><div class="progress-bar__fill" id="progress-fill"></div></div>
+      <span class="progress-text" id="progress-text">0 / 3 ukończone</span>
+    </div>
 
-        <div class="theory__block" style="align-items:center;text-align:center;padding:4rem 2rem;">
-          <span style="font-size:3rem;">🚧</span>
-          <h2 class="theory__block-title" style="justify-content:center;">W budowie</h2>
-          <p class="theory__text">Ten moduł jest w trakcie implementacji. Wróć wkrótce!</p>
-        </div>
-
-        <div class="theory__nav">
-          <a href="quiz.html" class="btn btn--ghost">← Quiz</a>
-          <a href="kod.html" class="btn btn--primary">Uzupełnianie kodu →</a>
-        </div>
-
+    <!-- ══════════════════════════════════════════════════════════
+         EXERCISE 1 — sumOfList
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="exercise" id="ex-0">
+      <div class="exercise__header">
+        <div class="exercise__num">1</div>
+        <span class="exercise__title">Suma listy liczb</span>
+        <span class="exercise__badge" id="badge-0">Oczekuje</span>
       </div>
-    </section>
+      <div class="exercise__body">
+        <p class="zone-label">Dostępne linie — przeciągnij do strefy poniżej</p>
+        <div class="source-pool" id="source-0" data-ex="0"></div>
+
+        <br>
+        <p class="zone-label">Twoja odpowiedź — ułóż w poprawnej kolejności</p>
+        <div class="drop-zone" id="drop-0" data-ex="0"></div>
+
+        <br>
+        <div class="feedback" id="fb-0"></div>
+      </div>
+      <div class="exercise__actions">
+        <button class="btn btn--primary" onclick="check(0)">Sprawdź</button>
+        <button class="btn btn--ghost"   onclick="reset(0)">Resetuj</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         EXERCISE 2 — isEven
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="exercise" id="ex-1">
+      <div class="exercise__header">
+        <div class="exercise__num">2</div>
+        <span class="exercise__title">Parzysta liczba</span>
+        <span class="exercise__badge" id="badge-1">Oczekuje</span>
+      </div>
+      <div class="exercise__body">
+        <p class="zone-label">Dostępne linie</p>
+        <div class="source-pool" id="source-1" data-ex="1"></div>
+        <br>
+        <p class="zone-label">Twoja odpowiedź</p>
+        <div class="drop-zone" id="drop-1" data-ex="1"></div>
+        <br>
+        <div class="feedback" id="fb-1"></div>
+      </div>
+      <div class="exercise__actions">
+        <button class="btn btn--primary" onclick="check(1)">Sprawdź</button>
+        <button class="btn btn--ghost"   onclick="reset(1)">Resetuj</button>
+      </div>
+    </div>
+
+    <!-- ══════════════════════════════════════════════════════════
+         EXERCISE 3 — factorial
+    ═══════════════════════════════════════════════════════════════ -->
+    <div class="exercise" id="ex-2">
+      <div class="exercise__header">
+        <div class="exercise__num">3</div>
+        <span class="exercise__title">Silnia (rekurencja)</span>
+        <span class="exercise__badge" id="badge-2">Oczekuje</span>
+      </div>
+      <div class="exercise__body">
+        <p class="zone-label">Dostępne linie</p>
+        <div class="source-pool" id="source-2" data-ex="2"></div>
+        <br>
+        <p class="zone-label">Twoja odpowiedź</p>
+        <div class="drop-zone" id="drop-2" data-ex="2"></div>
+        <br>
+        <div class="feedback" id="fb-2"></div>
+      </div>
+      <div class="exercise__actions">
+        <button class="btn btn--primary" onclick="check(2)">Sprawdź</button>
+        <button class="btn btn--ghost"   onclick="reset(2)">Resetuj</button>
+      </div>
+    </div>
+
+    <div class="nav-row">
+      <a href="quiz.html" class="btn btn--ghost">← Quiz</a>
+      <a href="kod.html"  class="btn btn--primary">Uzupełnianie kodu →</a>
+    </div>
   </main>
 
-  <footer class="site-footer">
+  <footer>
     <span>Kotlin Learn © 2025</span>
     <span>Moduł 03 · Bloczki</span>
   </footer>
 
-  <script src="../js/navbar.js"></script>
+ <script src="bloczki.js"></script>
+ 
 </body>
 </html>
